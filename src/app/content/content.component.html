@@ -1,0 +1,39 @@
+<app-summary></app-summary>
+<div class="block">
+  <div class="block__item block__item--padding-tb block__item--align-center">
+    <strong class="label">Order: </strong>
+    <select class="select" [(ngModel)]="order">
+      <option value="title">Title</option>
+      <option value="date">Date</option>
+    </select>
+  </div>
+  <div class="block__item block__item--padding-tb block__item--align-center">
+    <strong class="label">Only Date: </strong>
+    <input type="checkbox" [(ngModel)]="onlyDate" />
+  </div>
+  <div class="block__item block__item--padding-tb block__item--border block__item--align-center">
+    <strong class="label">Search:</strong>
+    <input type="text" [(ngModel)]="searchText" (ngModelChange)="search()"/>
+  </div>
+</div>
+<div class="block">
+  <div class="block__item block__item--flex-col block__item--border block__item--bg"
+    *ngFor="let item of itemsFound | orderBy: [order]"
+    (click)="setItem(item)"
+  >
+    <div>
+      <strong class="label">Title: </strong>
+      <span>{{item.title}}</span>
+    </div>
+    <div>
+      <strong class="label">Date: </strong>
+      <span>{{showDate(item.date)}}</span>
+    </div>
+  </div>
+</div>
+<div class="block">
+  <div class="block__item block__item--padding block__item--align-center">
+    <strong class="label">New title:</strong>
+    <input type="text" [(ngModel)]="newTitle" (change)="addItem()"/>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+app-root
+  height: 100%
+  display: flex
+  align-items: stretch
+  > *
+    flex: 0 0 auto
+  > app-content
+    flex: 1 1 auto
+
+.block
+  display: flex
+  flex-direction: column
+
+.block__item
+  display: flex
+  padding: 0 10px
+  &--nopadding
+    padding: 0
+
+  &--flex-col
+    flex-direction: column
+
+  &--align-center
+    align-items: center
+
+  &--border
+    border-bottom: 1px solid $c-gray
+
+  &--bg
+    cursor: pointer
+    &:hover
+      background: $c-gray-light
+  &--padding-tb
+    padding-top: 5px
+    padding-bottom: 5px
+
+  &--padding
+    padding: 10px
+
+.label
+  padding-right: 5px
+
+.select
+  padding: 2px 4px

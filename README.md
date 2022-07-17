@@ -1,1 +1,1 @@
-# angularTs
+### Порт задачи https://github.com/sensosirinx/angularJs на Angular 14

@@ -1,0 +1,14 @@
+<div class="elements-view__ctrls">
+  <form (submit)="setWidth()">
+    <label>Width: <input type="number" [(ngModel)]="width" min="100" max="600" step="1"></label>
+    <button type="submit">Set</button>
+  </form>
+</div>
+<div class="block">
+  <div class="block__item block__item--padding block__item--border">
+    <button class="button" (click)="loadData()">Button</button>
+  </div>
+  <div class="block__item block__item--border block__item--bg" *ngFor="let item of items">
+    {{item.title}}
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="block" *ngIf="item">
+  <div class="block__item block__item--border">
+    <strong class="label">Selected Item: </strong>
+    <span>{{item.title}}</span>
+  </div>
+  <div class="block__item block__item--nopadding block__item--border block__item--flex-col">
+    <div class="block__item">
+      <strong class="label">Tags:</strong>
+    </div>
+    <div class="block__item block__item--align-center"
+      *ngFor="let tag of item.tags; last as isLast"
+      [class.block__item--border]="!isLast"
+    >
+      {{tag}}
+      <button class="delete-tag" (click)="deleteTag(tag)">x</button>
+    </div>
+  </div>
+  <div class="block__item block__item--padding block__item--align-center">
+    <strong class="label">Add tag:</strong>
+    <form (submit)="addTag()">
+      <input type="text" [(ngModel)]="newTag" />
+      <button type="submit">Add</button>
+    </form>
+  </div>
+</div>

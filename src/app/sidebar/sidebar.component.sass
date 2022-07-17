@@ -1,0 +1,22 @@
+app-sidebar
+  $border-size: 1px
+  display: block
+  width: calc($sidebar-width + $border-size)
+  border-left: $border-size solid $c-gray
+  box-sizing: border-box
+
+.delete-tag
+  display: flex
+  padding: 0 4px
+  border: 1px solid $c-dark
+  border-radius: 4px
+  color: $c-dark
+  align-items: center
+  cursor: pointer
+  align-content: center
+  line-height: 8px
+  height: 16px
+  margin-left: 5px
+  &:hover
+    background: $c-gray-light
+    border-color: $c-gray
