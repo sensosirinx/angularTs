@@ -24,12 +24,12 @@ export class ElementsComponent implements OnInit {
     this.service.getData.subscribe((items: ItemsType[]) => this.items = items)
   }
 
-  setWidth = () => {
-    this.renderer.setStyle(this.el.nativeElement, 'width', this.width + 'px')
-    return false
+  setWidth = (): void => {
+    const width: number = (this.width > 100) ? this.width : 100
+    this.renderer.setStyle(this.el.nativeElement, 'width', width + 'px')
   }
 
-  loadData = async () => {
+  loadData = async (): Promise<void> => {
     await this.service.loadData()
   }
 
